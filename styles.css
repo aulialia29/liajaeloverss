@@ -1,0 +1,423 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+  h1, h2, h3 {
+    color: #ff69b4; /* Pink pastel */
+  }
+  
+  a, .btn {
+    text-decoration: none;
+  }
+  
+  .btn {
+    background-color: #39ff14; /* Green neon */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn.secondary {
+    background-color: #ff69b4; /* Pink pastel */
+  }
+  
+  .btn:hover {
+    opacity: 0.8;
+  }
+  
+
+  /* Hero Section */
+  .hero {
+    background-image: url('Backgroud1.jpg'); /* Ganti dengan path gambar Anda */
+    background-size: cover; /* Agar gambar memenuhi seluruh area */
+    background-position: center; /* Menjaga posisi gambar tetap di tengah */
+    background-repeat: no-repeat; /* Agar gambar tidak berulang */
+    color: #fff; /* Teks tetap terlihat di atas gambar */
+    text-align: center;
+    padding: 100px 20px;
+    position: relative; /* Untuk overlay opsional */
+    border-radius: 15px; /* Membulatkan sudut hero */
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay hitam transparan */
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2; /* Konten tetap di atas overlay */
+  }  
+  
+  
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Efek bayangan teks */
+  }
+  
+  .hero-title span {
+    display: inline-block;
+    background: linear-gradient(90deg, #fff, #ffe4e1);
+    background-clip: text; /* Properti standar */
+    color: transparent;
+    font-size: 3.5rem;
+    font-style: italic;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #f9f9f9;
+  }
+  
+  .hero .btn {
+    font-size: 1.2rem;
+    padding: 12px 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #ffe4e1; /* Pink pastel */
+    color: #ff69b4; /* Pink tua */
+    border: 2px solid #fff;
+    font-weight: bold; /* Membuat tulisan menjadi tebal */
+  }
+  
+  .hero .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+ /* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffe4e1; /* Light pink background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow untuk kesan elegan */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Agar tetap di atas */
+  }
+  
+  .navbar .brand h1 {
+    font-size: 1.5rem;
+    color: #ff69b4; /* Pink pastel */
+  }
+  
+  .navbar .menu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar .menu li {
+    list-style: none;
+  }
+  
+  .navbar .menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar .menu a:hover {
+    background-color: #ff69b4; /* Pink pastel */
+    color: #fff;
+  }
+  
+  .navbar .toggle-menu {
+    display: none; /* Sembunyikan tombol di desktop */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .navbar .menu {
+      flex-direction: column;
+      gap: 10px;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background-color: #ffe4e1; /* Light pink */
+      padding: 10px 20px;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      display: none; /* Hidden by default */
+    }
+  
+    .navbar .menu.hidden {
+      display: flex; /* Tampilkan menu saat toggle di klik */
+    }
+  
+    .navbar .toggle-menu {
+      display: block; /* Tampilkan toggle untuk mobile */
+    }
+  }
+  
+  /* About Section */
+  .about {
+    background-color: #fff5f7; /* Soft pink */
+    padding: 50px 20px;
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+/* Products Section */
+.products {
+  background-color: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.products h2 {
+  font-size: 2.5rem;
+  color: #ff69b4;
+  margin-bottom: 10px;
+}
+
+.products-description {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 kolom */
+  gap: 20px; /* Jarak antar produk */
+  padding: 20px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column; /* Pastikan konten di dalam kartu teratur secara vertikal */
+  align-items: center; /* Pusatkan konten secara horizontal */
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px; /* Membatasi ukuran maksimal kartu produk */
+  margin: 0 auto; /* Pusatkan kartu produk */
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  width: 100%; /* Lebar gambar mengisi area kartu */
+  height: 200px; /* Ukuran tinggi gambar tetap */
+  object-fit: cover; /* Menjaga rasio gambar dan memotong jika perlu untuk memenuhi area */
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-price {
+  font-size: 1rem;
+  color: #39ff14;
+  margin-bottom: 10px;
+}
+
+.product-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.product-buttons button {
+  padding: 10px 15px;
+  background-color: #ff69b4;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.product-buttons button:hover {
+  background-color: #ff1493;
+  transform: scale(1.05);
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk layar lebih kecil */
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* 1 kolom untuk layar lebih kecil */
+  }
+}
+
+/* Why Us Section */
+.why-us {
+  background-color: #f9f9f9; /* Soft gray background */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.why-us h2 {
+  font-size: 2.5rem;
+  color: #ff69b4; /* Soft pink color */
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk desktop */
+  gap: 40px;
+  padding: 0 20px;
+}
+
+.feature {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-5px); /* Efek hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+  width: 50px; /* Ukuran ikon */
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .features {
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    grid-template-columns: 1fr; /* 1 kolom untuk ponsel */
+  }
+}
+
+
+  /* Contact Section */
+  .contact {
+    background-color: #ffe4e1; /* Light pink */
+    padding: 50px 20px;
+    text-align: center;
+  }
+  
+  .contact h2 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #ff69b4; /* Pink pastel */
+  }
+  
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  form label {
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  form textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  form button {
+    background-color: #39ff14; /* Green neon */
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #32cd32;
+  }
+  
+  .contact .btn.secondary {
+    display: inline-block;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px 20px;
+  }
